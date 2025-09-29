@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EventPro Design System - extracted from Figma design */
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --brand-primary: 253 91% 64%;
+    --brand-primary-dark: 253 91% 54%;
+    --brand-secondary: 217 91% 60%;
+    --brand-accent: 134 61% 41%;
+    
+    /* Neutral Palette */
+    --background: 0 0% 100%;
+    --foreground: 223 84% 5%;
+    --surface: 0 0% 98%;
+    --surface-secondary: 210 20% 96%;
+    
+    /* Semantic Colors */
+    --success: 134 61% 41%;
+    --success-light: 134 61% 95%;
+    --warning: 38 92% 50%;
+    --warning-light: 38 92% 95%;
+    --error: 0 84% 60%;
+    --error-light: 0 84% 95%;
+    --info: 217 91% 60%;
+    --info-light: 217 91% 95%;
+    
+    /* Component Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 223 84% 5%;
+    --card-border: 220 13% 91%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 223 84% 5%;
+    
+    --primary: 253 91% 64%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 223 84% 5%;
+    
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 253 91% 64%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(134 61% 51%));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--surface)));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 223 84% 5%;
+    --foreground: 210 40% 98%;
+    --surface: 223 84% 7%;
+    --surface-secondary: 223 84% 10%;
+    
+    --card: 223 84% 7%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 223 84% 15%;
+    
+    --popover: 223 84% 7%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 253 91% 64%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 223 84% 15%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 223 84% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 223 84% 15%;
+    --input: 223 84% 15%;
+    --ring: 253 91% 64%;
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--surface-secondary)));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Animation utilities */
+  .animate-in {
+    animation: animate-in 0.2s ease-out;
+  }
+
+  .animate-out {
+    animation: animate-out 0.2s ease-in;
+  }
+
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animate-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Glass effect */
+  .glass {
+    background: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
